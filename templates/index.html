@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Image Classification</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    .jumbotron {
+        background-color: #afeb50;
+        font-family: 'STIX Two Text', serif;
+        text-align:center;}
+
+body {
+    background: url(static/9.jpg) no-repeat center center fixed; 
+     background-color:#f2f5a9; 
+     background-size: cover; 
+}
+
+.fontchn {
+  font-family: 'STIX Two Text', serif;
+}
+
+.leafimage {
+  align : center;
+  justify-content : center;
+  margin-left : 350px;
+  border-radius: 10%;
+    border: 10px solid #afeb50;
+}
+
+}
+    
+</style>
+
+<body>
+
+<div class="container">
+  <h1 class="jumbotron bg-primary"><b>Plant Leaf Image Classfication</b></h1>
+  <br><br>
+  <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label>
+      <div class="col-sm-10">          
+        <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+      </div>
+    </div>
+
+    
+
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </form>
+
+	{% if prediction %}
+
+  <img  class="leafimage" src="{{img_path}}" height="400px" width="400px">
+	<h2 class="fontchn"><b> Leaf Specie Name Prediction : </b> " {{prediction}} " </h2>
+  <h2 class="fontchn"><b> Details of leaf Predicted : </b></h2>
+  {% if prediction == "zelkova_serrata"%} 
+  <h3> Zelkova serrata is a medium-sized deciduous tree usually growing to 30 m (98 ft) tall. It is characterized by a short trunk dividing into many upright and erect spreading stems forming a broad, round-topped head. The tree grows rapidly when young though the growth rate slows to medium upon middle age and maturity.</h3> 
+  <h2><b> More Info... </b></h2>
+  <a href="https://en.wikipedia.org/wiki/Zelkova_serrata"><h3>https://en.wikipedia.org/wiki/Zelkova_serrata</h3></a>
+  {%endif%}
+
+  {% if prediction == "acer_palmatum"%} 
+  <h3> Acer palmatum is a deciduous shrub or small tree reaching heights of 6 to 10 m (20 to 33 ft), rarely 16 metres (52 ft), reaching a mature width of 4.5 to 10 metres (15 to 33 ft), often growing as an understory plant in shady woodlands. It may have multiple trunks joining close to the ground. In habit, its canopy often takes on a dome-like form, especially when mature.</h3> 
+  <h2><b> More Info... </b></h2>
+  <a href="https://en.wikipedia.org/wiki/Acer_palmatum"><h3>https://en.wikipedia.org/wiki/Acer_palmatum</h3></a>
+  {%endif%}
+
+  {% if prediction == "betula_lenta"%} 
+  <h3> Betula lenta (sweet birch, also known as black birch, cherry birch, mahogany birch, or spice birch) is a species of birch native to eastern North America, from southern Maine west to southernmost Ontario, and south in the Appalachian Mountains to northern Georgia.</h3> 
+  <h2><b> More Info... </b></h2>
+  <a href="https://en.wikipedia.org/wiki/Betula_lenta"><h3>https://en.wikipedia.org/wiki/Betula_lenta</h3></a>
+  {%endif%}
+
+  {% if prediction == "cedrus_libani"%} 
+  <h3> Cedrus libani, the cedar of Lebanon or Lebanese cedar (Arabic: أرز لبناني‎, romanized: ʾarz Lubnāniyy), is a species of tree in the pine family Pinaceae, native to the mountains of the Eastern Mediterranean basin. It is a large evergreen conifer that has great religious and historical significance in the cultures of the Middle East, and is referenced many times in the literature of ancient civilisations. It is the national emblem of Lebanon and is widely used as an ornamental tree in parks and gardens.</h3> 
+  <h2><b> More Info... </b></h2>
+  <a href="https://en.wikipedia.org/wiki/Cedrus_libani"><h3>https://en.wikipedia.org/wiki/Cedrus_libani</h3></a>
+  {%endif%}
+
+  {% if prediction == "diospyros_virginiana"%} 
+  <h3> Diospyros virginiana is a persimmon species commonly called the American persimmon, common persimmon, eastern persimmon, simmon, possumwood, possum apples, or sugar plum. It ranges from southern Connecticut to Florida, and west to Texas, Louisiana, Oklahoma, Kansas, and Iowa. The tree grows wild but has been cultivated for its fruit and wood since prehistoric times by Native Americans.</h3> 
+  <h2><b> More Info... </b></h2>
+  <a href="https://en.wikipedia.org/wiki/Diospyros_virginiana"><h3>https://en.wikipedia.org/wiki/Diospyros_virginiana</h3></a>
+  {%endif%}
+
+  {% if prediction == "evodia_daniellii"%} 
+  <h3> Evodia daniellii, or Korean Evodia, is a small to medium sixed deciduous tree, typically growing to 25 feet, that tends to have weak wood and is generally short-lived. It is easy to transplant with a rapid growth rate, but young trees are not as cold hardy as mature trees so it is best to plant a mature tree.</h3> 
+  <h2><b> More Info... </b></h2>
+  <a href="https://plants.ces.ncsu.edu/plants/evodia-daniellii"><h3>https://plants.ces.ncsu.edu/plants/evodia-daniellii</h3></a>
+  {%endif%}
+
+  {% if prediction == "ginkgo_biloba"%} 
+  <h3> Ginkgo biloba, commonly known as ginkgo or gingko[4] (both pronounced /ˈɡiŋkoʊ/ or /ˈɡɪŋkoʊ/), also known as the maidenhair tree, is a species of tree native to China. It is the only living species in the order Ginkgoales, which first appeared over 290 million years ago. Fossils very similar to the living species, belonging to the genus Ginkgo, extend back to the Middle Jurassic approximately 170 million years ago. The tree is widely cultivated, and was cultivated early in human history.</h3> 
+  <h2><b> More Info... </b></h2>
+  <a href="https://en.wikipedia.org/wiki/Ginkgo_biloba"><h3>https://en.wikipedia.org/wiki/Ginkgo_biloba</h3></a>
+  {%endif%}
+
+  {% if prediction == "ilex_opaca"%} 
+  <h3> Ilex opaca, the American holly, is a species of holly, native to the eastern and south-central United States, from coastal Massachusetts south to central Florida, and west to southeastern Missouri and eastern Texas.</h3> 
+  <h2><b> More Info... </b></h2>
+  <a href="https://en.wikipedia.org/wiki/Ilex_opaca"><h3>https://en.wikipedia.org/wiki/Ilex_opaca</h3></a>
+  {%endif%}
+
+  {% if prediction == "juglans_nigra"%} 
+  <h3> Juglans nigra, the eastern American black walnut, is a species of deciduous tree in the walnut family, Juglandaceae, native to North America. It grows mostly in riparian zones, from southern Ontario, west to southeast South Dakota, south to Georgia, northern Florida and southwest to central Texas. Wild trees in the upper Ottawa Valley may be an isolated native population or may have derived from planted trees.</h3> 
+  <h2><b> More Info... </b></h2>
+  <a href="https://en.wikipedia.org/wiki/Juglans_nigra"><h3>https://en.wikipedia.org/wiki/Juglans_nigra</h3></a>
+  {%endif%}
+
+  {% if prediction == "koelreuteria_paniculata"%} 
+  <h3> Koelreuteria paniculata is a species of flowering plant in the family Sapindaceae, native to eastern Asia, in China and Korea. It was introduced in Europe in 1747, and to America in 1763, and has become a popular landscape tree worldwide. Common names include goldenrain tree, pride of India, China tree, and the varnish tree.</h3> 
+  <h2><b> More Info... </b></h2>
+  <a href="https://en.wikipedia.org/wiki/Koelreuteria_paniculata"><h3>https://en.wikipedia.org/wiki/Koelreuteria_paniculata</h3></a>
+  {%endif%}
+
+  {% if prediction == "malus_pumila"%} 
+  <h3> Malus is a small genus of approximately 30 species distributed across northern temperate regions, although the number of species is difficult to determine because closely related species readily cross, producing complex hybrids, whilst cultivated and wild apples frequently cross to produce highly variable wildings.</h3> 
+  <h2><b> More Info... </b></h2>
+  <a href="https://herbaria.plants.ox.ac.uk/bol/plants400/Profiles/MN/Malus"><h3>https://herbaria.plants.ox.ac.uk/bol/plants400/Profiles/MN/Malus</h3></a>
+  {%endif%}
+
+  {% if prediction == "ostrya_virginiana"%} 
+  <h3> Ostrya virginiana, the American hophornbeam, is a species of Ostrya native to eastern North America, from Nova Scotia west to southern Manitoba and eastern Wyoming, southeast to northern Florida and southwest to eastern Texas. Populations from Mexico and Central America are also regarded as the same species, although some authors prefer to separate them as a distinct species, Ostrya guatemalensis. Other names include eastern hophornbeam, hardhack (in New England), ironwood, and leverwood.</h3> 
+  <h2><b> More Info... </b></h2>
+  <a href="https://en.wikipedia.org/wiki/Ostrya_virginiana"><h3>https://en.wikipedia.org/wiki/Ostrya_virginiana</h3></a>
+  {%endif%}
+
+  {% if prediction == "pinus_taeda"%} 
+  <h3> Pinus taeda, commonly known as loblolly pine, is one of several pines native to the Southeastern United States, from East Texas to Florida, and north to southern New Jersey. The wood industry classifies the species as a southern yellow pine. U.S. Forest Service surveys found that loblolly pine is the second-most common species of tree in the United States, after red maple.</h3> 
+  <h2><b> More Info... </b></h2>
+  <a href="https://en.wikipedia.org/wiki/Pinus_taeda"><h3>https://en.wikipedia.org/wiki/Pinus_taeda</h3></a>
+  {%endif%}
+
+  {% if prediction == "quercus_palustris"%} 
+  <h3> Quercus palustris, the pin oak or swamp Spanish oak, is a tree in the red oak section (Quercus sect. Lobatae) of the genus Quercus. Pin oak is one of the most commonly used landscaping oaks in its native range due to its ease of transplant, relatively fast growth, and pollution tolerance. Its distinctive shape is considered unique among hardwoods.</h3> 
+  <h2><b> More Info... </b></h2>
+  <a href="https://en.wikipedia.org/wiki/Quercus_palustris"><h3>https://en.wikipedia.org/wiki/Quercus_palustris</h3></a>
+  {%endif%}
+
+  {% if prediction == "ulmus_pumila"%} 
+  <h3> Ulmus pumila, the Siberian elm, is a tree native to Central Asia, eastern Siberia, the Russian Far East, Mongolia, Tibet, northern China, India (northern Kashmir) and Korea. It is also known as the Asiatic elm and dwarf elm, but sometimes miscalled the 'Chinese Elm' (Ulmus parvifolia). It is the last tree species encountered in the semi-desert regions of central Asia.</h3> 
+  <h2><b> More Info... </b></h2>
+  <a href="https://en.wikipedia.org/wiki/Ulmus_pumila"><h3>https://en.wikipedia.org/wiki/Ulmus_pumila</h3></a>
+  {%endif%}
+  
+
+
+
+
+
+	{% endif %}
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
