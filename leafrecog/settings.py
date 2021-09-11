@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import numpy as np
 import cv2
-from flask import Flask, render_template, request
 from keras.models import load_model
 from keras.preprocessing import image
 
