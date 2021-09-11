@@ -3,7 +3,6 @@ import cv2
 from django.conf import settings
 from django.core.files.storage import default_storage
 from django.shortcuts import render
-from keras.applications import vgg16
 from keras.applications.imagenet_utils import decode_predictions
 from keras.preprocessing.image import img_to_array, load_img
 from keras.models import load_model
