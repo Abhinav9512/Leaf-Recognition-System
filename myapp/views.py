@@ -41,13 +41,13 @@ def index(request):
         fs = FileSystemStorage()
         filename = fs.save(img_path, img)
         uploaded_file_url = fs.url(filename)
-        # print(filename)
+        print(filename)
         # print(uploaded_file_url)
-        p = predict_label(filename)
+        p = predict_label("media/"+filename)
 
         # return render(request, "index.html", prediction = p, img_path = filename)
 
-        context = {'prediction' : p, 'img_path' : filename}
+        context = {'prediction' : p, 'img_path' : "media/"+filename}
         return render(request, 'index.html', context) 
     else:
         return render(request,"index.html")

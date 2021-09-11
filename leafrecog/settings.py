@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0ut%(=zd+kwl*9*l4s5(w(80#0ih6abvr6&-(#oe0zhxa&j1ul'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','leaf12.herokuapp.com/']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -131,4 +131,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR,"media/")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
