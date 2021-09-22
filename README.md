@@ -3,4 +3,4 @@ This is a leaf recognition system website that used CNN having Inception V3 mode
 It has an accuracy of 82%. 
 It require leaf images as input and provide leaf specie name as output with its details. 
 
-Website link : https://leafrecog123.herokuapp.com/
+Website link : https://leaf12.herokuapp.com/
