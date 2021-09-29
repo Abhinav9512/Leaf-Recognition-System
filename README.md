@@ -4,3 +4,6 @@ It has an accuracy of 82%.
 It require leaf images as input and provide leaf specie name as output with its details. 
 
 Website link : https://leaf12.herokuapp.com/
+
+For training and testing the model : go to "untitled3.ipynb" and open it on google collab. You have to specify the new dataset and train or test it accordingly.
+
